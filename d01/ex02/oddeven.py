@@ -21,4 +21,19 @@ def is_number(s):
 	except ValueError:
 		return False
 
-if sys.argv[1]
+def main():
+	data = input('Enter a number: ')
+	if is_number(data):
+		data = int(data)
+		if data % 2 == 0:
+			print ("The number %d is even" % (data))
+		else:
+			print ("The number %d is odd" % (data))
+	else:
+		print ("'%s' is not a number" % (data))
+
+main()
+# exception ValueError
+# Raised when a built-in operation or function receives an argument that has the
+# right type but an inappropriate value, and the situation is not described by a
+# more precise exception such as IndexError.

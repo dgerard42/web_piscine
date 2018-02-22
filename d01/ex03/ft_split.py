@@ -1,22 +1,18 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    mlx.py                                             :+:      :+:    :+:    #
+#    ft_split.py                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dgerard <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/02/21 11:37:54 by dgerard           #+#    #+#              #
-#    Updated: 2018/02/21 11:37:57 by dgerard          ###   ########.fr        #
+#    Created: 2018/02/21 13:37:27 by dgerard           #+#    #+#              #
+#    Updated: 2018/02/21 13:37:31 by dgerard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/usr/bin/python3
 
-lines = 0;
-while lines < 10:
-	chars = 0
-	while chars < 100:
-		print('X', end='', flush=True)
-		chars += 1
-	print('\n', end='', flush=True)
-	lines += 1
+def ft_split(string):
+	words = string.split()
+	words = sorted(words)
+	return (words)
