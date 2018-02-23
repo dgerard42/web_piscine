@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ssap.py                                            :+:      :+:    :+:    #
+#    another_world.py                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dgerard <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/02/21 19:04:13 by dgerard           #+#    #+#              #
-#    Updated: 2018/02/21 19:04:33 by dgerard          ###   ########.fr        #
+#    Created: 2018/02/22 12:09:43 by dgerard           #+#    #+#              #
+#    Updated: 2018/02/22 12:09:44 by dgerard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,11 @@ import sys
 import re
 
 def main():
-	words = []
-	for param in sys.argv[1:]:
-		if ' ' in param:
-			wurds = param.split()
-			words = wurds + words
-		else:
-			words.append(param)
-	words = sorted(words)
-	for word in words:
-		print ("%s" % word)
+	if (len(sys.argv) > 1):
+		trimmed = re.sub('\t+', ' ', sys.argv[1])
+		trimmed = trimmed.strip()
+		trimmed = re.sub(' +', ' ', trimmed)
+		trimmed = trimmed.strip()
+		print ("%s" % trimmed)
 
 main()

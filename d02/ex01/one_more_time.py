@@ -1,30 +1,22 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ssap.py                                            :+:      :+:    :+:    #
+#    one_more_time.py                                   :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dgerard <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/02/21 19:04:13 by dgerard           #+#    #+#              #
-#    Updated: 2018/02/21 19:04:33 by dgerard          ###   ########.fr        #
+#    Created: 2018/02/22 12:41:00 by dgerard           #+#    #+#              #
+#    Updated: 2018/02/22 12:41:01 by dgerard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/usr/bin/python3
 
 import sys
-import re
+from datetime import datetime
 
 def main():
-	words = []
-	for param in sys.argv[1:]:
-		if ' ' in param:
-			wurds = param.split()
-			words = wurds + words
-		else:
-			words.append(param)
-	words = sorted(words)
-	for word in words:
-		print ("%s" % word)
+	locale.setlocale(locale.LC_ALL, French)
+	datetime_object = datetime.strptime(sys.argv[1], '%b %d %Y %I:%M%p')
 
-main()
+# fuck this day
