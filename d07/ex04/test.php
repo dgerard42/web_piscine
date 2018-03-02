@@ -27,11 +27,3 @@ $t->sleepWith($s);
 $t->sleepWith($c);
 
 ?>
-
-<!-- Not even if I'm drunk ! -->
-<!-- Let's do this. -->
-<!-- With pleasure, but only in a tower in Winterfell, then. -->
-
-<!-- Not even if I'm drunk ! -->
-<!-- Let's do this. -->
-<!-- Not even if I'm drunk ! -->
