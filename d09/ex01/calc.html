@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style></style>
+		<script>
+			function calcboye() {
+				var num_A = document.getElementById('num_A').value;
+				var num_B = document.getElementById('num_B').value;
+				var operator = document.getElementById('operator').value;
+				console.log(num_A);
+				num_A = +num_A;
+				num_B = +num_B;
+				console.log(num_A);
+				var res = 0;
+				if (operator == '+') {
+					res = num_A + num_B
+				} else if (operator == '-') {
+					res = num_A - num_B;
+				} else if (operator == '*') {
+					res = num_A * num_B;
+				} else if (operator == '/') {
+					res = num_A / num_B;
+				}
+				console.log(res);
+				document.getElementById('output').innerHTML = res;
+			}
+		</script>
+		<title>CSW CALCULATOR</title>
+	</head>
+	<body>
+		<input id=num_A name="number A" type="text"></input>
+		<select id=operator name="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</input>
+		<input id=num_B name="number B" type="text"></input>
+		<input id="button" type="button" value="Try Me!" onclick="calcboye()"></input>
+		<p id=output> here</p>
+	</body>
+</html>
