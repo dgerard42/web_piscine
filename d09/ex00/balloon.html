@@ -11,8 +11,46 @@
 		}
 		</style>
 		<title> bLOw tHaT BLoOn </title>
+		<script>
+			function blow_bloon() {
+				var bloon=document.getElementsByClassName("balloon")[0];
+				if (bloon.style.height == '420px' || bloon.style.height == ""){
+					bloon.style.height = '200px';
+					bloon.style.width = '200px';
+				}
+				else {
+					var height=parseInt(bloon.style.height, 10);
+					var width=parseInt(bloon.style.width, 10);
+					bloon.style.height = height + 10 + 'px';
+					bloon.style.width = width + 10 + 'px';
+				}
+				if ('red' == bloon.style.backgroundColor || '' == bloon.style.backgroundColor) {
+					bloon.style.backgroundColor = 'green';
+				} else if ('green' == bloon.style.backgroundColor) {
+					bloon.style.backgroundColor = 'blue';
+				} else if ('blue' == bloon.style.backgroundColor) {
+					bloon.style.backgroundColor = 'red';
+				}
+			}
+			function shrink_bloon() {
+				var bloon=document.getElementsByClassName("balloon")[0];
+				if (bloon.style.height > '200px') {
+					var height=parseInt(bloon.style.height, 10);
+					var width=parseInt(bloon.style.width, 10);
+					bloon.style.height = height - 10 + 'px';
+					bloon.style.width = width - 10 + 'px';
+				}
+				if ('red' == bloon.style.backgroundColor) {
+					bloon.style.backgroundColor = 'blue';
+				} else if ('green' == bloon.style.backgroundColor) {
+					bloon.style.backgroundColor = 'red';
+				} else if ('blue' == bloon.style.backgroundColor) {
+					bloon.style.backgroundColor = 'green';
+				}
+			}
+		</script>
 	</head>
 	<body>
-		<div class='balloon'></div>
+		<div class="balloon" onclick="blow_bloon()" onmouseout="shrink_bloon()"></div>
 	</body>
 </html>
