@@ -7,23 +7,33 @@
 				var num_A = document.getElementById('num_A').value;
 				var num_B = document.getElementById('num_B').value;
 				var operator = document.getElementById('operator').value;
-				console.log(num_A);
+				// console.log(num_A);
 				num_A = +num_A;
 				num_B = +num_B;
-				console.log(num_A);
+				// console.log(num_A);
 				var res = 0;
-				if (operator == '+') {
-					res = num_A + num_B
-				} else if (operator == '-') {
-					res = num_A - num_B;
-				} else if (operator == '*') {
-					res = num_A * num_B;
-				} else if (operator == '/') {
-					res = num_A / num_B;
+				if (num_A > -1 && num_B > -1) {
+					if (operator == '+') {
+						res = num_A + num_B
+					} else if (operator == '-') {
+						res = num_A - num_B;
+					} else if (operator == '*') {
+						res = num_A * num_B;
+					} else if ((operator == '/' || operator == '%') && num_B == 0) {
+						alert("It's over 9000!");
+						console.log("It's over 9000!");
+					} else if (operator == '/' && num_B != 0) {
+						res = num_A / num_B;
+					} else if (operator =='%' && num_B != 0) {
+						res = num_A % num_B;
+					}
+					document.getElementById('output').innerHTML = res;
+					console.log(res);
+				} else {
+					alert("Error :(");
 				}
-				console.log(res);
-				document.getElementById('output').innerHTML = res;
 			}
+			setInterval(function() {alert("Please, use me...");}, 30000);
 		</script>
 		<title>CSW CALCULATOR</title>
 	</head>
@@ -34,9 +44,10 @@
 			<option value="-">-</option>
 			<option value="*">*</option>
 			<option value="/">/</option>
+			<option value="%">%</option>
 		</input>
 		<input id=num_B name="number B" type="text"></input>
 		<input id="button" type="button" value="Try Me!" onclick="calcboye()"></input>
-		<p id=output> here</p>
+		<p id=output></p>
 	</body>
 </html>
